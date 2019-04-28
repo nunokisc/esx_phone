@@ -79,7 +79,7 @@ function GenerateUniquePhoneNumber()
 		Citizen.Wait(100)
 
 		math.randomseed(GetGameTimer())
-		phoneNumber = math.random(10000, 99999)
+		phoneNumber = "91" .. math.random(0000000, 9999999)
 
 		local result = MySQL.Sync.fetchAll('SELECT COUNT(*) as count FROM users WHERE phone_number = @phoneNumber', {
 			['@phoneNumber'] = phoneNumber
